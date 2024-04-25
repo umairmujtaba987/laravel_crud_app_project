@@ -14,7 +14,8 @@ class UserController extends Controller
             'loginpassword' => 'required'
         ]);
         if(auth()->attempt(['name' => $incommingFields['loginname'], 'password' => $incommingFields['loginpassword']])) 
-        {
+        { 
+             
             $request->session()->regenerate();
         }
         return redirect('/');
